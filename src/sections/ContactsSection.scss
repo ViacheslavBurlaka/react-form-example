@@ -1,0 +1,35 @@
+@import "../assets/styles/vars";
+
+.ContactsSection {
+  position: relative;
+
+  @media (min-width: $desktop) {
+    margin-top: 91px;
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+    background-image: url(../assets/images/Map.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .Form {
+    box-shadow: $shadow;
+
+    @media (min-width: $desktop) {
+      margin-left: auto;
+      position: relative;
+      top: -80px;
+    }
+  }
+}

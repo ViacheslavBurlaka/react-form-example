@@ -1,0 +1,71 @@
+@import "../../assets/styles/vars";
+
+.InputField {
+  display: block;
+  margin-bottom: 28px;
+  position: relative;
+
+  &[data-loaded="true"] {
+    & * {
+      color: $color-placeholder !important;
+    }
+  }
+
+  &__input {
+    position: relative;
+
+    &::before {
+      content: "";
+      border-radius: 8px 0 0 8px;
+      background-color: transparent;
+      position: absolute;
+      left: 1px;
+      top: 1px;
+      width: 2px;
+      height: calc(100% - 2px);
+      transition: all $transition;
+    }
+
+    &:focus-within {
+      &::before {
+        background-color: $color-blue;
+      }
+    }
+  }
+
+  label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: $color-label;
+
+    .error-msg {
+      color: $color-red;
+      text-transform: none;
+    }
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    line-height: 1.15;
+    border: 1px solid $color-grey;
+    border-radius: 4px;
+    outline: none;
+    color: $color-primary;
+
+    &:focus {
+      //box-shadow: inset 1px 0 $color-blue;
+    }
+
+    &::placeholder {
+      color: $color-placeholder;
+    }
+  }
+}

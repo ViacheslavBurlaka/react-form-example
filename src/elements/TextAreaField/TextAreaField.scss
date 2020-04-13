@@ -1,0 +1,39 @@
+@import "../../assets/styles/vars";
+
+.TextAreaField {
+  display: block;
+  width: 320px;
+  margin-bottom: 34px;
+
+  &[data-loaded="true"] {
+    & * {
+      color: $color-placeholder !important;
+    }
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: $color-label
+  }
+
+  textarea {
+    display: block;
+    width: 100%;
+    min-height: 115px;
+    padding: 14px 16px;
+    font-size: 16px;
+    line-height: 1.15;
+    border: 1px solid $color-grey;
+    border-radius: 4px;
+    outline: none;
+
+    &::placeholder {
+      color: $color-placeholder;
+    }
+  }
+}
