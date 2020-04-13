@@ -13,6 +13,7 @@ const TextAreaField = (props) => {
         placeholder={props.placeholder}
         value={props.value}
         onChange={props.handleChange}
+        disabled={loading}
       />
     </div>
   );

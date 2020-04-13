@@ -45,6 +45,7 @@ const FormDetails = ({values, errors, nextStep, handleChange}) => {
             options={options}
             handleChange={handleChange}
             loading={loading}
+            disabled={loading}
           />
           <InputField
             type="text"
@@ -55,6 +56,7 @@ const FormDetails = ({values, errors, nextStep, handleChange}) => {
             value={values.name}
             error={errors.name}
             loading={loading}
+            disabled={loading}
           />
           <InputField
             type="text"
@@ -66,6 +68,7 @@ const FormDetails = ({values, errors, nextStep, handleChange}) => {
             value={values.phone}
             error={errors.phone}
             loading={loading}
+            disabled={loading}
           />
           <InputField
             type="email"
@@ -76,6 +79,7 @@ const FormDetails = ({values, errors, nextStep, handleChange}) => {
             value={values.email}
             error={errors.email}
             loading={loading}
+            disabled={loading}
           />
           <TextAreaField
             name="message"
@@ -84,6 +88,7 @@ const FormDetails = ({values, errors, nextStep, handleChange}) => {
             handleChange={handleChange}
             value={values.message}
             loading={loading}
+            disabled={loading}
           />
           <Button
             text={'Send'}

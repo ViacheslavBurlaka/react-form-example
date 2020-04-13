@@ -10,15 +10,21 @@
   padding: 0.5rem 1rem;
   margin: 1rem 0;
   transition: all $transition;
+  transform: translateY(0);
+  will-change: transform;
+
+  @media (min-width: $desktop) {
+    padding: 2rem 9rem 1rem;
+  }
 
   &--sticky {
     position: sticky;
     top: 0;
     box-shadow: $shadow;
-  }
 
-  @media (min-width: $desktop) {
-    padding: 32px 146px;
+    @media (min-width: $desktop) {
+      transform: translateY(-1rem);
+    }
   }
 
   &__logo {

@@ -3,11 +3,11 @@
 label {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   color: $color-label;
 
   .error-msg {

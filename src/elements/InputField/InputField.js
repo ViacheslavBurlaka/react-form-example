@@ -21,6 +21,7 @@ const InputField = (props) => {
           value={props.value}
           onChange={props.handleChange}
           autoComplete="off"
+          disabled={loading}
           required/>
       </div>
     </div>

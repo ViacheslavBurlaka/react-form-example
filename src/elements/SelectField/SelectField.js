@@ -13,6 +13,7 @@ const SelectField = (props) => {
           value={props.value}
           name={props.name}
           onChange={props.handleChange}
+          disabled={props.loading}
         >
           {props.options.map(opt => (
             <option value={opt} key={opt}>{opt}</option>
