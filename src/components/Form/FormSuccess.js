@@ -1,25 +1,25 @@
 import React from 'react';
 import image from "../../assets/images/Illustration.svg";
 import Button from "../../elements/Button/Button";
-import List from "../../elements/List/List";
 
-const FormSuccess = ({values, prevStep}) => {
+const FormSuccess = ({defaultStep}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    prevStep();
+    defaultStep();
   };
 
   return (
     <div className="Form">
-      <div className="FormSuccess">
-        <img src={image} alt=""/>
-        <div className="FormSuccess__title">
+      <div className="FormStep">
+        <div className="Form__img">
+          <img src={image} alt=""/>
+        </div>
+        <div className="FormStep__title">
           We received your message!
         </div>
         <p>
           Thanks for contacting us! We will get back to you ASAP
         </p>
-        {values.name && <List data={values}/>}
         <Button text="Great!" handler={handleSubmit}/>
       </div>
     </div>

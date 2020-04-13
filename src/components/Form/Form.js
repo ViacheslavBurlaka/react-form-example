@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import './Form.scss';
-import FormSuccess from "./FormSuccess";
 import FormDetails from "./FormDetails";
+import FormConfirm from "./FormConfirm";
+import FormSuccess from "./FormSuccess";
 import Button from "../../elements/Button/Button";
 import {validEmailRegex} from '../../assets/utils/validEmailRegex'
 import {validTelRegex} from "../../assets/utils/validTelRexex";
@@ -9,18 +10,25 @@ import {validTelRegex} from "../../assets/utils/validTelRexex";
 const Form = () => {
   const initialState = {
     step: 1,
-    select: '',
+    select: 'Work opportunities',
     name: '',
     phone: '',
     email: '',
     message: '',
     formErrors: {
-      name: false,
+      name: '',
       phone: '',
       email: '',
     }
   };
   const [state, setState] = useState(initialState);
+
+  const defaultStep = () => {
+    setState({
+      ...initialState,
+      step: 1,
+    });
+  };
 
   const nextStep = () => {
     setState(prevState => ({
@@ -69,13 +77,15 @@ const Form = () => {
       [name]: value,
       errors
     }));
+
+    console.log(state)
   };
 
   const {step} = state;
   const errors = state.formErrors;
-  const {name, phone, email, message} = state;
+  const {select, name, phone, email, message} = state;
   const values = {
-    name, phone, email, message
+    select, name, phone, email, message
   };
 
   switch (step) {
@@ -90,8 +100,16 @@ const Form = () => {
       );
     case 2:
       return (
-        <FormSuccess
+        <FormConfirm
           prevStep={prevStep}
+          nextStep={nextStep}
+          values={values}
+        />
+      );
+    case 3:
+      return (
+        <FormSuccess
+          defaultStep={defaultStep}
           values={values}
         />
       );
@@ -100,7 +118,7 @@ const Form = () => {
         <div>
           <Button
             text={'Go to contacts form'}
-            handler={nextStep}
+            handler={defaultStep}
           />
         </div>
       )

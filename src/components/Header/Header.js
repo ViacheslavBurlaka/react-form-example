@@ -6,6 +6,7 @@ import './Header.scss';
 
 const Header = () => {
   const [isSticky, setSticky] = useState(false);
+
   const handleScroll = () => {
     const winScroll =
       document.body.scrollTop ||
@@ -15,7 +16,6 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', () => handleScroll);
     };

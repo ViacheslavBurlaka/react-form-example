@@ -1,4 +1,5 @@
 import React from 'react';
+import './List.scss';
 
 const List = ({data}) => {
   const items = Object.entries(data).map((item, index) => {

@@ -20,6 +20,7 @@ const InputField = (props) => {
           placeholder={props.placeholder}
           value={props.value}
           onChange={props.handleChange}
+          autoComplete="off"
           required/>
       </div>
     </div>

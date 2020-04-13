@@ -2,6 +2,7 @@
 
 .ContactsSection {
   position: relative;
+  min-height: 100vh;
 
   @media (min-width: $desktop) {
     margin-top: 91px;
@@ -16,17 +17,26 @@
     background-image: url(../assets/images/Map.png);
     background-repeat: no-repeat;
     background-position: center top;
+    background-attachment: fixed;
     background-size: cover;
   }
 
   .container {
     display: flex;
+    padding: 0 1rem;
+
+    @media (min-width: $desktop) {
+      padding: 0 146px;
+    }
   }
 
   .Form {
     box-shadow: $shadow;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 
     @media (min-width: $desktop) {
+      margin-top: 0;
       margin-left: auto;
       position: relative;
       top: -80px;

@@ -2,19 +2,21 @@ import React, {useState} from 'react';
 import InputField from "../../elements/InputField/InputField";
 import TextAreaField from "../../elements/TextAreaField/TextAreaField";
 import Button from "../../elements/Button/Button";
+import SelectField from "../../elements/SelectField/SelectField";
+import options from "../../assets/data/options";
+
+const validateForm = (errors) => {
+  let valid = true;
+  Object.values(errors).forEach(
+    // if we have an error string -> set valid to false
+    (val) => val.length > 0 && (valid = false)
+  );
+  return valid;
+};
 
 const FormDetails = ({values, errors, nextStep, handleChange}) => {
 
   const [loading, setLoading] = useState(false);
-
-  const validateForm = (errors) => {
-    let valid = true;
-    Object.values(errors).forEach(
-      // if we have an error string set valid to false
-      (val) => val.length > 0 && (valid = false)
-    );
-    return valid;
-  };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -24,7 +26,6 @@ const FormDetails = ({values, errors, nextStep, handleChange}) => {
       setTimeout(() => {
         nextStep()
       }, 3000);
-
     } else {
       console.error('Invalid Form')
     }
@@ -37,6 +38,14 @@ const FormDetails = ({values, errors, nextStep, handleChange}) => {
           Contact Us
         </div>
         <form onSubmit={handleSubmit}>
+          <SelectField
+            name="select"
+            label="Subject"
+            value={values.select}
+            options={options}
+            handleChange={handleChange}
+            loading={loading}
+          />
           <InputField
             type="text"
             name="name"

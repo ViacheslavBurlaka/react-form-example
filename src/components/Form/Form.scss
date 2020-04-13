@@ -1,21 +1,29 @@
 @import "../../assets/styles/vars";
 
 .Form {
-  padding: 36px 48px 40px;
+  padding: 1rem 1rem 1.5rem;
   border-radius: 4px;
   box-shadow: $shadow;
-  background-color: #fff;
+  background-color: $color-white;
+  width: 100%;
 
   @media (min-width: $desktop) {
     max-width: 416px;
+    padding: 36px 48px 40px;
   }
 
   &__heading {
     font-weight: 700;
     font-size: 36px;
     line-height: 44px;
-    color: #000;
+    color: $color-black;
     margin-bottom: 38px;
+  }
+
+  &__img {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .InputField {
@@ -24,22 +32,39 @@
     }
   }
 
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .Btn {
     width: 100%;
+
+    &:not(:first-of-type) {
+      margin-left: 1rem;
+    }
+  }
+
+  &__img {
+    img {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  br {
+    @media (min-width: $desktop) {
+      display: none;
+    }
   }
 }
 
-.FormSuccess {
-  img {
-    margin-bottom: 2.5rem;
-  }
-
+.FormStep {
   &__title {
     text-align: center;
     font-weight: bold;
     font-size: 32px;
     line-height: 38px;
-    color: #000;
+    color: $color-black;
     margin-bottom: 26px;
   }
 
@@ -49,14 +74,14 @@
   }
 
   .Btn {
-    border: 1px solid #000;
+    border: 1px solid $color-black;
     background-color: $color-white;
     color: $color-primary;
     padding: 15px;
 
     &:hover {
       background-color: $color-primary;
-      color: #fff;
+      color: $color-white;
     }
   }
 }
